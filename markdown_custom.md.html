@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Custom Markdown CSS Demo Report</title>
+
+
+
+
+
+<style type="text/css">
+/*!
+ * Bootstrap v2.3.2
+ *
+ * Copyright 2013 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  /* Responsive images (ensure images don't scale beyond their parents) */
+
+  max-width: 100%;
+  /* Part 1: Set a maxium relative to the parent */
+
+  width: auto\9;
+  /* IE7-8 need help adjusting responsive images */
+
+  height: auto;
+  /* Part 2: Scale the height according to the width, otherwise you get stretching */
+
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+body {
+  margin: auto;
+  margin-left:210px;
+  font-family: 'Helvetica Neue', Helvetica, Calibri;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  background-color: #ffffff;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #005580;
+  text-decoration: underline;
+}
+p {
+  margin: 0 0 10px;
+}
+small {
+  font-size: 85%;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+cite {
+  font-style: normal;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+h1,
+h2,
+h3 {
+  line-height: 30px;
+}
+h1 {
+  font-size: 15pt;
+  color: #365F91;
+}
+h2 {
+  font-size: 13pt;
+  color: #4F81BD;
+}
+h3 {
+  font-size: 12pt;
+  color: #4F81BD;
+}
+h4 {
+  font-size: 10pt;
+  font-weight: bold;
+  font-style: italic;
+  color: #4F81BD;
+}
+h5 {
+  font-size: 11pt;
+  font-weight: normal;
+  color: #243F5D;
+}
+h6 {
+  font-size: 11pt;
+  font-weight: normal;
+  font-style: italic;
+  color: #243F5D;
+}
+.page-header {
+  padding-bottom: 9px;
+  margin: 20px 0 30px;
+  border-bottom: 1px solid #eeeeee;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10px 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: 20px;
+}
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+ul.inline,
+ol.inline {
+  margin-left: 0;
+  list-style: none;
+}
+ul.inline > li,
+ol.inline > li {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eeeeee;
+}
+blockquote p {
+  margin-bottom: 0;
+  font-size: 17.5px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+blockquote small {
+  display: block;
+  line-height: 20px;
+  color: #999999;
+}
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+blockquote.pull-right {
+  float: right;
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+}
+blockquote.pull-right p,
+blockquote.pull-right small {
+  text-align: right;
+}
+blockquote.pull-right small:before {
+  content: '';
+}
+blockquote.pull-right small:after {
+  content: '\00A0 \2014';
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  border-collapse: separate;
+  *border-collapse: collapse;
+  border-left: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+th, td {
+  padding: 4px 5px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+}
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+  background-color: #e0e0e0;
+}
+caption + thead tr:first-child th,
+caption + thead tr:first-child td,
+colgroup + thead tr:first-child th,
+colgroup + thead tr:first-child td,
+thead:first-child tr:first-child th,
+thead:first-child tr:first-child td {
+  border-top: 0;
+}
+tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+caption + thead tr:first-child th,
+caption + tbody tr:first-child th,
+caption + tbody tr:first-child td,
+colgroup + thead tr:first-child th,
+colgroup + tbody tr:first-child th,
+colgroup + tbody tr:first-child td,
+thead:first-child tr:first-child th,
+tbody:first-child tr:first-child th,
+tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+thead:first-child tr:first-child > th:first-child,
+tbody:first-child tr:first-child > td:first-child,
+tbody:first-child tr:first-child > th:first-child {
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+}
+thead:first-child tr:first-child > th:last-child,
+tbody:first-child tr:first-child > td:last-child,
+tbody:first-child tr:first-child > th:last-child {
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+}
+thead:last-child tr:last-child > th:first-child,
+tbody:last-child tr:last-child > td:first-child,
+tbody:last-child tr:last-child > th:first-child,
+tfoot:last-child tr:last-child > td:first-child,
+tfoot:last-child tr:last-child > th:first-child {
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius: 4px;
+}
+thead:last-child tr:last-child > th:last-child,
+tbody:last-child tr:last-child > td:last-child,
+tbody:last-child tr:last-child > th:last-child,
+tfoot:last-child tr:last-child > td:last-child,
+tfoot:last-child tr:last-child > th:last-child {
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-bottom-right-radius: 4px;
+}
+tfoot + tbody:last-child tr:last-child td:first-child {
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+}
+tfoot + tbody:last-child tr:last-child td:last-child {
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-right-radius: 0;
+}
+caption + thead tr:first-child th:first-child,
+caption + tbody tr:first-child td:first-child,
+colgroup + thead tr:first-child th:first-child,
+colgroup + tbody tr:first-child td:first-child {
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+}
+caption + thead tr:first-child th:last-child,
+caption + tbody tr:first-child td:last-child,
+colgroup + thead tr:first-child th:last-child,
+colgroup + tbody tr:first-child td:last-child {
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+}
+
+pre {
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+ 
+pre code {
+   display: block; padding: 0.5em;
+}
+ 
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+@media print {
+   * {
+	  background: transparent !important;
+	  color: black !important;
+	  filter: none !important;
+	  -ms-filter: none !important;
+   }
+ 
+   body {
+	  font-size:11pt;
+	  max-width:100%;
+   }
+ 
+   a, a:visited {
+	  text-decoration: underline;
+   }
+ 
+   hr {
+	  visibility: hidden;
+	  page-break-before: always;
+   }
+ 
+   pre, blockquote {
+	  padding-right: 1em;
+	  page-break-inside: avoid;
+   }
+ 
+   tr, img {
+	  page-break-inside: avoid;
+   }
+ 
+   img {
+	  max-width: 100% !important;
+   }
+ 
+   @page {
+	  margin-top: 2cm;
+	  margin-bottom: 1.5cm;
+	  margin-left: 3cm;
+	  margin-right: 3cm;
+   }
+ 
+   p, h2, h3 {
+	  orphans: 3; widows: 3;
+   }
+ 
+   h2, h3 {
+	  page-break-after: avoid;
+   }
+}
+
+#toc {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  overflow:auto;
+}
+</style>
+
+<script src='http://code.jquery.com/jquery-1.10.2.min.js'></script> <link rel='stylesheet' type='text/css' href='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.css'> <script>$(document).ready(function() { $('#datTable').dataTable();});</script> <script src='http://cdn.datatables.net/1.10.0/js/jquery.dataTables.js'></script> <link rel='stylesheet' type='text/css' href='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.css'> <script>$(document).ready(function() { $('#datTable').dataTable();});</script> <script src='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.js'></script> <link rel='stylesheet' type='text/css' href='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.css'> <script>$(document).ready(function() { $('#datTable').dataTable();});</script>
+
+</head>
+
+<body>
+<div id="toc">
+<div id="toc_header">Table of Contents</div>
+<ul>
+<li>
+<a href="#toc_0">Custom Markdown CSS Demo Report</a>
+<ul>
+<li>
+<a href="#toc_1">Introduction</a>
+<ul>
+<li>
+<a href="#toc_2">The code</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_3">Regular Table</a>
+</li>
+<li>
+<a href="#toc_4">Table with DataTables</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<h1 id="toc_0">Custom Markdown CSS Demo Report</h1>
+
+<p>Aug 05 2014</p>
+
+<h2 id="toc_1">Introduction</h2>
+
+<p>This template outlines aesthetics of <a href="https://github.com/malnirav/RdataObjects/blob/master/markdown_custom.css">markdown_custom.css</a> which is a gutted version of <a href="http://getbootstrap.com/css/">Bootstrap CSS</a>. Furthermore, I outline few tricks of using <a href="http://www.datatables.net">DataTables</a> to display long tables in reproducible reports generated using <a href="http://yihui.name/knitr/">Knitr</a>. </p>
+
+<h3 id="toc_2">The code</h3>
+
+<p>One can reconstruct this report using following files from my <a href="https://github.com/malnirav/RdataObjects">github repository</a>:</p>
+
+<ul>
+<li><p>Main R source file: <a href="https://github.com/malnirav/RdataObjects/blob/master/markdown_custom.R">markdown_custom.R</a></p></li>
+<li><p>R markdown template of this report: <a href="https://github.com/malnirav/RdataObjects/blob/master/markdown_custom.Rmd">markdown_custom.Rmd</a></p></li>
+<li><p>Custom CSS file: <a href="https://github.com/malnirav/RdataObjects/blob/master/markdown_custom.css">markdown_custom.css</a></p></li>
+</ul>
+
+<h2 id="toc_3">Regular Table</h2>
+
+<p><code>r
+data(mtcars)
+kable(mtcars, format=&quot;html&quot;, row.names=FALSE, caption=&quot;mtcars&quot;)
+</code></p>
+
+<table>
+<caption>mtcars</caption>
+ <thead>
+  <tr>
+   <th align="right"> mpg </th>
+   <th align="right"> cyl </th>
+   <th align="right"> disp </th>
+   <th align="right"> hp </th>
+   <th align="right"> drat </th>
+   <th align="right"> wt </th>
+   <th align="right"> qsec </th>
+   <th align="right"> vs </th>
+   <th align="right"> am </th>
+   <th align="right"> gear </th>
+   <th align="right"> carb </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td align="right"> 21.0 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 160.0 </td>
+   <td align="right"> 110 </td>
+   <td align="right"> 3.90 </td>
+   <td align="right"> 2.620 </td>
+   <td align="right"> 16.46 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 21.0 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 160.0 </td>
+   <td align="right"> 110 </td>
+   <td align="right"> 3.90 </td>
+   <td align="right"> 2.875 </td>
+   <td align="right"> 17.02 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 22.8 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 108.0 </td>
+   <td align="right"> 93 </td>
+   <td align="right"> 3.85 </td>
+   <td align="right"> 2.320 </td>
+   <td align="right"> 18.61 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 21.4 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 258.0 </td>
+   <td align="right"> 110 </td>
+   <td align="right"> 3.08 </td>
+   <td align="right"> 3.215 </td>
+   <td align="right"> 19.44 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 18.7 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 360.0 </td>
+   <td align="right"> 175 </td>
+   <td align="right"> 3.15 </td>
+   <td align="right"> 3.440 </td>
+   <td align="right"> 17.02 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 18.1 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 225.0 </td>
+   <td align="right"> 105 </td>
+   <td align="right"> 2.76 </td>
+   <td align="right"> 3.460 </td>
+   <td align="right"> 20.22 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 14.3 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 360.0 </td>
+   <td align="right"> 245 </td>
+   <td align="right"> 3.21 </td>
+   <td align="right"> 3.570 </td>
+   <td align="right"> 15.84 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 24.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 146.7 </td>
+   <td align="right"> 62 </td>
+   <td align="right"> 3.69 </td>
+   <td align="right"> 3.190 </td>
+   <td align="right"> 20.00 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 22.8 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 140.8 </td>
+   <td align="right"> 95 </td>
+   <td align="right"> 3.92 </td>
+   <td align="right"> 3.150 </td>
+   <td align="right"> 22.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 19.2 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 167.6 </td>
+   <td align="right"> 123 </td>
+   <td align="right"> 3.92 </td>
+   <td align="right"> 3.440 </td>
+   <td align="right"> 18.30 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 17.8 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 167.6 </td>
+   <td align="right"> 123 </td>
+   <td align="right"> 3.92 </td>
+   <td align="right"> 3.440 </td>
+   <td align="right"> 18.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 16.4 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 275.8 </td>
+   <td align="right"> 180 </td>
+   <td align="right"> 3.07 </td>
+   <td align="right"> 4.070 </td>
+   <td align="right"> 17.40 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 3 </td>
+  </tr>
+  <tr>
+   <td align="right"> 17.3 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 275.8 </td>
+   <td align="right"> 180 </td>
+   <td align="right"> 3.07 </td>
+   <td align="right"> 3.730 </td>
+   <td align="right"> 17.60 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 3 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.2 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 275.8 </td>
+   <td align="right"> 180 </td>
+   <td align="right"> 3.07 </td>
+   <td align="right"> 3.780 </td>
+   <td align="right"> 18.00 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 3 </td>
+  </tr>
+  <tr>
+   <td align="right"> 10.4 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 472.0 </td>
+   <td align="right"> 205 </td>
+   <td align="right"> 2.93 </td>
+   <td align="right"> 5.250 </td>
+   <td align="right"> 17.98 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 10.4 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 460.0 </td>
+   <td align="right"> 215 </td>
+   <td align="right"> 3.00 </td>
+   <td align="right"> 5.424 </td>
+   <td align="right"> 17.82 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 14.7 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 440.0 </td>
+   <td align="right"> 230 </td>
+   <td align="right"> 3.23 </td>
+   <td align="right"> 5.345 </td>
+   <td align="right"> 17.42 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 32.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 78.7 </td>
+   <td align="right"> 66 </td>
+   <td align="right"> 4.08 </td>
+   <td align="right"> 2.200 </td>
+   <td align="right"> 19.47 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 30.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 75.7 </td>
+   <td align="right"> 52 </td>
+   <td align="right"> 4.93 </td>
+   <td align="right"> 1.615 </td>
+   <td align="right"> 18.52 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 33.9 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 71.1 </td>
+   <td align="right"> 65 </td>
+   <td align="right"> 4.22 </td>
+   <td align="right"> 1.835 </td>
+   <td align="right"> 19.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 21.5 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 120.1 </td>
+   <td align="right"> 97 </td>
+   <td align="right"> 3.70 </td>
+   <td align="right"> 2.465 </td>
+   <td align="right"> 20.01 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.5 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 318.0 </td>
+   <td align="right"> 150 </td>
+   <td align="right"> 2.76 </td>
+   <td align="right"> 3.520 </td>
+   <td align="right"> 16.87 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.2 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 304.0 </td>
+   <td align="right"> 150 </td>
+   <td align="right"> 3.15 </td>
+   <td align="right"> 3.435 </td>
+   <td align="right"> 17.30 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 13.3 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 350.0 </td>
+   <td align="right"> 245 </td>
+   <td align="right"> 3.73 </td>
+   <td align="right"> 3.840 </td>
+   <td align="right"> 15.41 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 19.2 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 400.0 </td>
+   <td align="right"> 175 </td>
+   <td align="right"> 3.08 </td>
+   <td align="right"> 3.845 </td>
+   <td align="right"> 17.05 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 27.3 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 79.0 </td>
+   <td align="right"> 66 </td>
+   <td align="right"> 4.08 </td>
+   <td align="right"> 1.935 </td>
+   <td align="right"> 18.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 26.0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 120.3 </td>
+   <td align="right"> 91 </td>
+   <td align="right"> 4.43 </td>
+   <td align="right"> 2.140 </td>
+   <td align="right"> 16.70 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 30.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 95.1 </td>
+   <td align="right"> 113 </td>
+   <td align="right"> 3.77 </td>
+   <td align="right"> 1.513 </td>
+   <td align="right"> 16.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.8 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 351.0 </td>
+   <td align="right"> 264 </td>
+   <td align="right"> 4.22 </td>
+   <td align="right"> 3.170 </td>
+   <td align="right"> 14.50 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 19.7 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 145.0 </td>
+   <td align="right"> 175 </td>
+   <td align="right"> 3.62 </td>
+   <td align="right"> 2.770 </td>
+   <td align="right"> 15.50 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 6 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.0 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 301.0 </td>
+   <td align="right"> 335 </td>
+   <td align="right"> 3.54 </td>
+   <td align="right"> 3.570 </td>
+   <td align="right"> 14.60 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 8 </td>
+  </tr>
+  <tr>
+   <td align="right"> 21.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 121.0 </td>
+   <td align="right"> 109 </td>
+   <td align="right"> 4.11 </td>
+   <td align="right"> 2.780 </td>
+   <td align="right"> 18.60 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 2 </td>
+  </tr>
+</tbody>
+</table>
+
+<h2 id="toc_4">Table with DataTables</h2>
+
+<p><code>r
+kable(mtcars, format = &quot;html&quot;, row.names=FALSE, caption=&quot;mtcars with DataTables&quot;,
+      table.attr=&quot;id=\&quot;datTable\&quot;&quot;)
+</code></p>
+
+<table id="datTable">
+<caption>mtcars with DataTables</caption>
+ <thead>
+  <tr>
+   <th align="right"> mpg </th>
+   <th align="right"> cyl </th>
+   <th align="right"> disp </th>
+   <th align="right"> hp </th>
+   <th align="right"> drat </th>
+   <th align="right"> wt </th>
+   <th align="right"> qsec </th>
+   <th align="right"> vs </th>
+   <th align="right"> am </th>
+   <th align="right"> gear </th>
+   <th align="right"> carb </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td align="right"> 21.0 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 160.0 </td>
+   <td align="right"> 110 </td>
+   <td align="right"> 3.90 </td>
+   <td align="right"> 2.620 </td>
+   <td align="right"> 16.46 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 21.0 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 160.0 </td>
+   <td align="right"> 110 </td>
+   <td align="right"> 3.90 </td>
+   <td align="right"> 2.875 </td>
+   <td align="right"> 17.02 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 22.8 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 108.0 </td>
+   <td align="right"> 93 </td>
+   <td align="right"> 3.85 </td>
+   <td align="right"> 2.320 </td>
+   <td align="right"> 18.61 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 21.4 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 258.0 </td>
+   <td align="right"> 110 </td>
+   <td align="right"> 3.08 </td>
+   <td align="right"> 3.215 </td>
+   <td align="right"> 19.44 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 18.7 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 360.0 </td>
+   <td align="right"> 175 </td>
+   <td align="right"> 3.15 </td>
+   <td align="right"> 3.440 </td>
+   <td align="right"> 17.02 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 18.1 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 225.0 </td>
+   <td align="right"> 105 </td>
+   <td align="right"> 2.76 </td>
+   <td align="right"> 3.460 </td>
+   <td align="right"> 20.22 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 14.3 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 360.0 </td>
+   <td align="right"> 245 </td>
+   <td align="right"> 3.21 </td>
+   <td align="right"> 3.570 </td>
+   <td align="right"> 15.84 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 24.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 146.7 </td>
+   <td align="right"> 62 </td>
+   <td align="right"> 3.69 </td>
+   <td align="right"> 3.190 </td>
+   <td align="right"> 20.00 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 22.8 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 140.8 </td>
+   <td align="right"> 95 </td>
+   <td align="right"> 3.92 </td>
+   <td align="right"> 3.150 </td>
+   <td align="right"> 22.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 19.2 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 167.6 </td>
+   <td align="right"> 123 </td>
+   <td align="right"> 3.92 </td>
+   <td align="right"> 3.440 </td>
+   <td align="right"> 18.30 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 17.8 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 167.6 </td>
+   <td align="right"> 123 </td>
+   <td align="right"> 3.92 </td>
+   <td align="right"> 3.440 </td>
+   <td align="right"> 18.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 16.4 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 275.8 </td>
+   <td align="right"> 180 </td>
+   <td align="right"> 3.07 </td>
+   <td align="right"> 4.070 </td>
+   <td align="right"> 17.40 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 3 </td>
+  </tr>
+  <tr>
+   <td align="right"> 17.3 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 275.8 </td>
+   <td align="right"> 180 </td>
+   <td align="right"> 3.07 </td>
+   <td align="right"> 3.730 </td>
+   <td align="right"> 17.60 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 3 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.2 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 275.8 </td>
+   <td align="right"> 180 </td>
+   <td align="right"> 3.07 </td>
+   <td align="right"> 3.780 </td>
+   <td align="right"> 18.00 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 3 </td>
+  </tr>
+  <tr>
+   <td align="right"> 10.4 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 472.0 </td>
+   <td align="right"> 205 </td>
+   <td align="right"> 2.93 </td>
+   <td align="right"> 5.250 </td>
+   <td align="right"> 17.98 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 10.4 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 460.0 </td>
+   <td align="right"> 215 </td>
+   <td align="right"> 3.00 </td>
+   <td align="right"> 5.424 </td>
+   <td align="right"> 17.82 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 14.7 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 440.0 </td>
+   <td align="right"> 230 </td>
+   <td align="right"> 3.23 </td>
+   <td align="right"> 5.345 </td>
+   <td align="right"> 17.42 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 32.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 78.7 </td>
+   <td align="right"> 66 </td>
+   <td align="right"> 4.08 </td>
+   <td align="right"> 2.200 </td>
+   <td align="right"> 19.47 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 30.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 75.7 </td>
+   <td align="right"> 52 </td>
+   <td align="right"> 4.93 </td>
+   <td align="right"> 1.615 </td>
+   <td align="right"> 18.52 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 33.9 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 71.1 </td>
+   <td align="right"> 65 </td>
+   <td align="right"> 4.22 </td>
+   <td align="right"> 1.835 </td>
+   <td align="right"> 19.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 21.5 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 120.1 </td>
+   <td align="right"> 97 </td>
+   <td align="right"> 3.70 </td>
+   <td align="right"> 2.465 </td>
+   <td align="right"> 20.01 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.5 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 318.0 </td>
+   <td align="right"> 150 </td>
+   <td align="right"> 2.76 </td>
+   <td align="right"> 3.520 </td>
+   <td align="right"> 16.87 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.2 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 304.0 </td>
+   <td align="right"> 150 </td>
+   <td align="right"> 3.15 </td>
+   <td align="right"> 3.435 </td>
+   <td align="right"> 17.30 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 13.3 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 350.0 </td>
+   <td align="right"> 245 </td>
+   <td align="right"> 3.73 </td>
+   <td align="right"> 3.840 </td>
+   <td align="right"> 15.41 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 19.2 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 400.0 </td>
+   <td align="right"> 175 </td>
+   <td align="right"> 3.08 </td>
+   <td align="right"> 3.845 </td>
+   <td align="right"> 17.05 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 3 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 27.3 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 79.0 </td>
+   <td align="right"> 66 </td>
+   <td align="right"> 4.08 </td>
+   <td align="right"> 1.935 </td>
+   <td align="right"> 18.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 1 </td>
+  </tr>
+  <tr>
+   <td align="right"> 26.0 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 120.3 </td>
+   <td align="right"> 91 </td>
+   <td align="right"> 4.43 </td>
+   <td align="right"> 2.140 </td>
+   <td align="right"> 16.70 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 30.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 95.1 </td>
+   <td align="right"> 113 </td>
+   <td align="right"> 3.77 </td>
+   <td align="right"> 1.513 </td>
+   <td align="right"> 16.90 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 2 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.8 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 351.0 </td>
+   <td align="right"> 264 </td>
+   <td align="right"> 4.22 </td>
+   <td align="right"> 3.170 </td>
+   <td align="right"> 14.50 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 4 </td>
+  </tr>
+  <tr>
+   <td align="right"> 19.7 </td>
+   <td align="right"> 6 </td>
+   <td align="right"> 145.0 </td>
+   <td align="right"> 175 </td>
+   <td align="right"> 3.62 </td>
+   <td align="right"> 2.770 </td>
+   <td align="right"> 15.50 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 6 </td>
+  </tr>
+  <tr>
+   <td align="right"> 15.0 </td>
+   <td align="right"> 8 </td>
+   <td align="right"> 301.0 </td>
+   <td align="right"> 335 </td>
+   <td align="right"> 3.54 </td>
+   <td align="right"> 3.570 </td>
+   <td align="right"> 14.60 </td>
+   <td align="right"> 0 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 5 </td>
+   <td align="right"> 8 </td>
+  </tr>
+  <tr>
+   <td align="right"> 21.4 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 121.0 </td>
+   <td align="right"> 109 </td>
+   <td align="right"> 4.11 </td>
+   <td align="right"> 2.780 </td>
+   <td align="right"> 18.60 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 1 </td>
+   <td align="right"> 4 </td>
+   <td align="right"> 2 </td>
+  </tr>
+</tbody>
+</table>
+
+</body>
+
+</html>

@@ -3,24 +3,25 @@
 
 ## Introduction
 
-This template outlines aesthetics of custom CSS file [linked phrase](http://example.com)
+This template outlines aesthetics of [markdown_custom.css](https://github.com/malnirav/RdataObjects/blob/master/markdown_custom.css) which is a gutted version of [Bootstrap CSS](http://getbootstrap.com/css/). Furthermore, I outline few tricks of using [DataTables](http://www.datatables.net) to display long tables in reproducible reports generated using [Knitr](http://yihui.name/knitr/). 
 
-```{r goiBitTable, results="asis"}
-goi.bit.seq$distToCleavSite.min <- NULL
-toprint <- goi.bit.seq
-toprint$GOI.Bit.Seq <- splitStringFixedLength(as.character(toprint$GOI.Bit.Seq), 50)
-kable(toprint, format="html", row.names=FALSE, 
-      caption="GOI Bit sequences ")
+### The code
+One can reconstruct this report using following files from my [github repository](https://github.com/malnirav/RdataObjects):
+
+* Main R source file: [markdown_custom.R](https://github.com/malnirav/RdataObjects/blob/master/markdown_custom.R)
+
+* R markdown template of this report: [markdown_custom.Rmd](https://github.com/malnirav/RdataObjects/blob/master/markdown_custom.Rmd)
+
+* Custom CSS file: [markdown_custom.css](https://github.com/malnirav/RdataObjects/blob/master/markdown_custom.css)
+
+## Regular Table
+```{r results="asis"}
+data(mtcars)
+kable(mtcars, format="html", row.names=FALSE, caption="mtcars")
 ```
 
-```{r transLocTable, results="asis"}
-cols <- c("setName", "seqnames", "strand", "clusteredPosition", "estAbund", 
-          "geneType", "qName")
-toprint <- subset(sites.qc, estAbund>1 & !GOI, select=cols)
-names(toprint)[2:5] <- c("Chr","Ort","Position","SonicAbund")
-toprint$Chr <- factor(toprint$Chr, 
-                      levels=intersect(seqnames(Hsapiens), toprint$Chr))
-toprint <- arrange(toprint, setName, Chr, Ort, Position)
-toprint$seq <- splitStringFixedLength(as.character(seqs[toprint$qName]), 40)
-kable(toprint, format = "html", row.names=FALSE, table.attr="id=\"datTable\"")
+## Table with DataTables
+```{r results="asis"}
+kable(mtcars, format = "html", row.names=FALSE, caption="mtcars with DataTables",
+      table.attr="id=\"datTable\"")
 ```

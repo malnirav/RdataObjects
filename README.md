@@ -14,6 +14,7 @@ R script used for report making tutorial
 **markdown_custom.R**: template R script to demonstrate usage of markdown\_custom.css
 **markdown_custom.Rmd**: template markdown document 
 **markdown_custom.css**: gutted bootstrap css with table of content mod for markdown reports
+**"markdown_custom.md.html**: product of running markdown_custom.R
 
 -----
 
