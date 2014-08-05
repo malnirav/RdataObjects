@@ -1,0 +1,26 @@
+# Custom Markdown CSS Demo Report
+`r format(Sys.Date(), "%b %d %Y")`
+
+## Introduction
+
+This template outlines aesthetics of custom CSS file [linked phrase](http://example.com)
+
+```{r goiBitTable, results="asis"}
+goi.bit.seq$distToCleavSite.min <- NULL
+toprint <- goi.bit.seq
+toprint$GOI.Bit.Seq <- splitStringFixedLength(as.character(toprint$GOI.Bit.Seq), 50)
+kable(toprint, format="html", row.names=FALSE, 
+      caption="GOI Bit sequences ")
+```
+
+```{r transLocTable, results="asis"}
+cols <- c("setName", "seqnames", "strand", "clusteredPosition", "estAbund", 
+          "geneType", "qName")
+toprint <- subset(sites.qc, estAbund>1 & !GOI, select=cols)
+names(toprint)[2:5] <- c("Chr","Ort","Position","SonicAbund")
+toprint$Chr <- factor(toprint$Chr, 
+                      levels=intersect(seqnames(Hsapiens), toprint$Chr))
+toprint <- arrange(toprint, setName, Chr, Ort, Position)
+toprint$seq <- splitStringFixedLength(as.character(seqs[toprint$qName]), 40)
+kable(toprint, format = "html", row.names=FALSE, table.attr="id=\"datTable\"")
+```
