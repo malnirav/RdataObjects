@@ -436,7 +436,7 @@ tt, code, pre {
 }
 </style>
 
-<script src='http://code.jquery.com/jquery-1.10.2.min.js'></script> <link rel='stylesheet' type='text/css' href='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.css'> <script>$(document).ready(function() { $('#datTable').dataTable();});</script> <script src='http://cdn.datatables.net/1.10.0/js/jquery.dataTables.js'></script> <link rel='stylesheet' type='text/css' href='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.css'> <script>$(document).ready(function() { $('#datTable').dataTable();});</script> <script src='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.js'></script> <link rel='stylesheet' type='text/css' href='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.css'> <script>$(document).ready(function() { $('#datTable').dataTable();});</script>
+<script src='http://code.jquery.com/jquery-1.10.2.min.js'></script> <script src='http://cdn.datatables.net/1.10.0/js/jquery.dataTables.js'></script> <script src='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.js'></script> <link rel='stylesheet' type='text/css' href='http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.css'> <script>$(document).ready(function() { $('#datTable').dataTable( { 'search': { 'regex': true }} );});</script>
 
 </head>
 
@@ -469,7 +469,7 @@ tt, code, pre {
 
 <h1 id="toc_0">Custom Markdown CSS Demo Report</h1>
 
-<p>Aug 05 2014</p>
+<p>Aug 08 2014</p>
 
 <h2 id="toc_1">Introduction</h2>
 
@@ -930,6 +930,8 @@ kable(mtcars, format=&quot;html&quot;, row.names=FALSE, caption=&quot;mtcars&quo
 </table>
 
 <h2 id="toc_4">Table with DataTables</h2>
+
+<p>Note: dont forget to try regex!</p>
 
 <p><code>r
 kable(mtcars, format = &quot;html&quot;, row.names=FALSE, caption=&quot;mtcars with DataTables&quot;,

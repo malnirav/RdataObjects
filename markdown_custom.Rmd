@@ -21,6 +21,8 @@ kable(mtcars, format="html", row.names=FALSE, caption="mtcars")
 ```
 
 ## Table with DataTables
+
+Note: dont forget to try regex!
 ```{r results="asis"}
 kable(mtcars, format = "html", row.names=FALSE, caption="mtcars with DataTables",
       table.attr="id=\"datTable\"")

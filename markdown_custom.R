@@ -6,14 +6,17 @@ sapply(libs, require, character.only=TRUE)
 jsInclude <- c("http://code.jquery.com/jquery-1.10.2.min.js", 
                "http://cdn.datatables.net/1.10.0/js/jquery.dataTables.js", 
                "http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.js")
+
 cssInclude <- c("http://cdn.datatables.net/plug-ins/e9421181788/integration/bootstrap/3/dataTables.bootstrap.css")
-freeText <- "<script>$(document).ready(function() { $('#datTable').dataTable();});</script>"
-headers <- paste(sapply(jsInclude, 
+
+freeText <- "<script>$(document).ready(function() { $('#datTable').dataTable( { 'search': { 'regex': true }} );});</script>"
+
+headers <- paste(c(sapply(jsInclude, 
                         function(x) sprintf("<script src='%s'></script>",x)),
                  sapply(cssInclude, 
                         function(x) 
                             sprintf("<link rel='stylesheet' type='text/css' href='%s'>",x)),
-                 freeText,
+                 freeText),
                  collapse=" ")
 
 #### make report ####
